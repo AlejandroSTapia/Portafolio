@@ -1,5 +1,4 @@
 import { fetchResources } from "/assets/js/apiService.js";
-import { showGlobalLoader, hideGlobalLoader } from "/assets/js/spinner.js";
 
 async function cargarImagenes() {
   try {
@@ -18,12 +17,17 @@ async function cargarImagenes() {
       { id: "imgUrl_SC_Categories", key: "imgUrl_SC_Categories" }
     ];
 
+    const existingMappings = imageMappings.filter(({ id }) => document.getElementById(id));
+
     let imagesLoaded = 0;
     
     for (const { id, key } of imageMappings) {
         const resourceUrl = resourceMap[key];
+
         if (resourceUrl) {
           const imgElement = document.getElementById(id);
+          const spinnerElement = document.getElementById("spinner_" + id.substring(7));           
+
           if (imgElement) {
             imgElement.src = resourceUrl;
 
@@ -31,7 +35,11 @@ async function cargarImagenes() {
 
             imgElement.onload = () => {
               imagesLoaded++;
-              if (imagesLoaded === imageMappings.length) {
+
+              if (spinnerElement) spinnerElement.style.display = "none";
+              imgElement.style.display = "block";
+              
+              if (imagesLoaded === existingMappings.length) {
                 console.log("Todas las imágenes cargadas. Inicializando Swiper...");
                 if (typeof window.inicializarSwiper === 'function') {
                   window.inicializarSwiper();
@@ -42,7 +50,8 @@ async function cargarImagenes() {
         }
       }
     // Si no se cargan imágenes, inicializa Swiper de inmediato
-    if (imagesLoaded === 0) {
+    if (existingMappings.length === 0) {
+  
       console.log("No se cargaron imágenes. Inicializando Swiper...");
       if (typeof window.inicializarSwiper === 'function') {
         window.inicializarSwiper();

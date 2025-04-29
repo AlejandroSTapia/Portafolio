@@ -1,31 +1,26 @@
 
-.image-container {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.image-container .spinner {
-  position: absolute;
-  top: 50%;
-  left: 50%;
+.spinner {
+  border: 4px solid #f3f3f3; /* Gris claro */
+  border-top: 4px solid #3498db; /* Azul */
+  border-radius: 50%;
   width: 40px;
   height: 40px;
-  margin: -20px 0 0 -20px;
-  border: 4px solid #ccc;
-  border-top: 4px solid #007bff;
-  border-radius: 50%;
   animation: spin 1s linear infinite;
-  z-index: 2;
+  margin: auto;
+  position: absolute;
+  top: 0; bottom: 0; left: 0; right: 0;
+}
+
+.image-container {
+  position: relative;
+  min-height: 150px; /* O el tamaño mínimo que quieras para el contenedor */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @keyframes spin {
-  to { transform: rotate(360deg); }
-}
-
-.image-container img {
-  width: 100%;
-  height: auto;
-  display: block;
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 

@@ -25,6 +25,8 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/css/spinner.css">
 </head>
 
 <body>
@@ -44,10 +46,17 @@
               <div class="swiper-wrapper">
   
                 <div class="swiper-slide">
-                  <img id="imgUrl_SC_Users" src="" alt="users">
+                  <div class="image-container">
+                    <div class="spinner" id="spinner_SC_Users"></div> <!-- Spinner -->
+                    <img id="imgUrl_SC_Users" src="" alt="users" style="display: none;"> <!-- Imagen oculta hasta que cargue -->
+                  </div>
                 </div>
+
                 <div class="swiper-slide">
-                  <img id="imgUrl_SC_Categories" src="" alt="Categories">
+                  <div class="image-container">
+                    <div class="spinner" id="spinner_SC_Categories"></div>
+                    <img id="imgUrl_SC_Categories" src="" alt="Categories" style="display: none;">
+                  </div>
                 </div>
                 
               </div>
@@ -57,7 +66,7 @@
 
           </div>
 
-          <div class="col-lg-4 portfolio-info">
+          <div class="col-lg-12 portfolio-info">
             <h3>Información de proyecto</h3>
             <ul>
               <li><strong>Categoria</strong>: Desarrollo web</li>
