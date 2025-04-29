@@ -158,7 +158,7 @@
 
 
   <!-- ======= Resume Section
-    CV    ======= -->
+        CV    ======= -->
   <section id="resume" class="resume">
     <div id="resumeContainer" class="container">
 
@@ -171,7 +171,9 @@
     <div id="servicesContainer" class="container">
 
     </div>
-  </section><!-- End Services Section -->
+  </section>
+  <!-- End Services Section -->
+
 
   <!-- ======= Portfolio Section ======= -->
   <section id="portfolio" class="portfolio">
@@ -197,13 +199,13 @@
 
         <div class="col-lg-8 col-md-12 portfolio-item filter-web">
           <div class="portfolio-wrap">
-            <img src="https://res.cloudinary.com/dkqrqmt3a/image/upload/v1739205305/Portfolio/ShoppingCartWeb.png" class="img-fluid" alt="">
+            <img id="imgUrl_SC_Welcome" src="" class="img-fluid" alt="">
             <div class="portfolio-info">
               <h4>Shopping Cart</h4>
               <p>Sistema web realizado con ASP .Net Core con MVC</p>
               <div class="portfolio-links">              
-                <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery" data-glightbox="type: external"
-                  class="portfolio-details-lightbox" title="Portfolio Details"><i class="bx bx-plus""></i></a>
+                <a href="ShoppingCart-details.html" data-gallery="portfolioDetailsGallery" data-glightbox="type: external"
+                  class="portfolio-details-lightbox" title="Portfolio Details"><i class="bx bx-plus"></i></a>
                   <a href="https://shoppingcart-stdev-gyhqaedrg9b7a7am.mexicocentral-01.azurewebsites.net/" data-gallery="portfolioGallery" class="portfolio-lightbox"><i
                     class="bx bx-link"></i></a>
               </div>
@@ -418,6 +420,10 @@
     Desarrollado por <a href="https://bootstrapmade.com/">Alejandro Tapia</a>
   </div>
 
+  <div id="global-loader" class="spinner-container" style="display: none;">
+    <div class="spinner"></div>
+  </div>  
+
   <!-- Vendor JS Files -->
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -431,6 +437,8 @@
   <script type="module" src="/assets/js/main.js"></script>
   <script type="module" src="/assets/js/apiService.js"></script>
   <script type="module" src="/assets/js/aboutme.js"></script>
+  <script type="module" src="/assets/js/services.js"></script>
+  <script type="module" src="/assets/js/CV.js"></script>
   <!-- <script type="module" src="/assets/js/aboutme.js"></script> -->
 </body>
 

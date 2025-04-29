@@ -1,7 +1,7 @@
 import config from '../js/config.js';
 
 // 127.0.0.1 es de live server
-const apiUrlBase = window.location.hostname === '127.0.0.1' ? config.apiUrlBaseDev : config.apiUrlBase;
+export const apiUrlBase = window.location.hostname === '127.0.0.1' ? config.apiUrlBaseDev : config.apiUrlBase;
 
 console.log('apiUrlBase:', apiUrlBase); // Verificar la URL base
 

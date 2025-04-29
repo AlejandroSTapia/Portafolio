@@ -224,19 +224,24 @@
   /**
    * Portfolio details slider
    */
-  new Swiper('.portfolio-details-slider', {
-    speed: 400,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
-    }
-  });
+
+
+  window.inicializarSwiper = function () {
+    window.portfolioSwiper = new Swiper('.portfolio-details-slider', {
+      speed: 400,
+      loop: true,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+        clickable: true
+      },
+      slidesPerView: 1,
+    });
+  };
 
   /**
    * Initiate Pure Counter 
