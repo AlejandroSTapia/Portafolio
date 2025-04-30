@@ -1,4 +1,7 @@
 import { sendContactEmail } from './sendGridEmailService.js';
+import { showAlert } from './alertContainer.js';
+
+var alertContainer = document.getElementById('alertContainer');
 
 document.querySelector("form").addEventListener("submit", async function (e) {
     e.preventDefault();
@@ -12,9 +15,11 @@ document.querySelector("form").addEventListener("submit", async function (e) {
 
     try {
         const result = await sendContactEmail({ name, email, message });
-        alert("Mensaje enviado correctamente.");
+        //alert("Mensaje enviado correctamente.");
+        showAlert('Correo enviado correctamente..', 'success', alertContainer);
     } catch(error) {
         console.error("Error al enviar el mensaje:", error);
-        alert(`Error al enviar el mensaje. ${error.message}`);
+        //alert(`Error al enviar el mensaje. ${error.message}`);
+        showAlert('Error al enviar el correo..', 'error', alertContainer);
     }
 });
